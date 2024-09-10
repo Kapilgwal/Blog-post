@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<body class="bg-gray-100">
+
+
+    <main class="container mx-auto mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for post in posts %}
+            <article class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-blue-900">{{post.title}}</h2>
+                <p class="text-sm text-gray-600 mt-2">Published on {{post.date_posted}} by <span
+                        class="font-semibold">{{post.author}}</span></p>
+                <p class="mt-4 text-gray-700">{{post.content}}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+
+
+
+</body>
+{% endblock content %}
